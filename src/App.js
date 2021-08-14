@@ -1,7 +1,6 @@
 import React from "react";
 
 import "./App.scss";
-//import styles from "./styles/App.module.css";
 import Header from "./components/Header";
 import Blueline from "./components/Blueline";
 import Aside from "./components/Aside";
