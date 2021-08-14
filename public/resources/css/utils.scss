@@ -1,0 +1,877 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+@import 'reset.scss';
+@import 'mixin.scss';
+
+body{
+    background-color: $bbg0;
+}
+.back{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left:0px;
+    top:0px;
+    z-index: 1;
+}
+.wrap{
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    background-color: $bbg0;
+}
+header{
+    position: fixed;
+    left: 0px;
+    top:0px;
+    width: 100%;
+    height: 56px;
+    background-color: $bbg1;
+    box-shadow: 0 10px 20px 0 rgba(15, 41, 107, 0.1);
+    z-index:100;
+}
+.header_line{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 11px 20px;
+    @include dflx_ac_jbet;
+}
+.header_left{
+  height: 100%;
+  @include dflx_ac;
+}
+.btn_menu{
+    width: 40px;
+    height: 40px;
+    background: url('../images/menu.png') no-repeat center center;
+    background-size: 24px auto;
+    cursor: pointer;
+}
+.hd_logo{
+    padding: 4px 20px;
+    a{
+        display: block;
+    }
+}
+nav{
+    @include dflx_ac;
+    height: 100%;
+    padding: 0px 0px 0px 6px;
+    .nav_menu{
+        padding: 0px 12px;
+        a{
+            @include fsm15;
+            display: block;
+            padding: 6px 0px 8px;
+            position: relative;
+        }
+        &.on,&:hover{
+            a::after{
+                content: "";
+                position: absolute;
+                left: 0px;
+                bottom: 0px;
+                display: block;
+                width: 100%;
+                height: 2px;
+                background-color: #fff;
+            }
+        }
+    }
+}
+.header_center{
+    //height: 100%;
+    position: absolute;
+    top:12px;
+    left:50%;
+    margin-left:-180px;
+    @include dflx_ac;
+}
+.hd_search{
+    position: relative;
+    width: 360px;
+    height: 32px;
+    padding: 0px 12px;
+    border-radius: 30px;
+    background-color: #141e52;
+    box-shadow: inset 3px 3px 10px 0 rgba(0, 0, 0, 0.9), 
+    inset -2px -2px 5px rgba(119, 119, 255, 0.7);
+    @include dflx_ac;
+    .hd_input{
+        flex:1;
+        height: 100%;
+        background: transparent;
+        padding: 0px 7px;
+        color: #fff;
+        font-size: 14px;
+    }
+}
+.btn_srch{
+    width: 24px;
+    height: 20px;
+    background: url('../images/sv_srch_wh.svg') no-repeat center center;
+    background-size: 20px 20px;
+    cursor: pointer;
+}
+.header_right{
+    height: 100%;
+}
+.hd_icline{
+    height: 100%;
+    @include dflx_ac_jend;
+}
+.hcircle{
+    margin: 0px 0px 0px 20px;
+    position: relative;
+    @include dflx_ac_jcent;
+    .cout{
+        position: absolute;
+        right: -6px;
+        top:-2px;
+        width: 20px;
+        height: 20px;
+        border-radius: 100%;
+        background-color: #ff4f19;
+        color: #fff;
+        font-size: 12px;
+        @include dflx_ac_jcent;
+    }
+}
+.hidd_zone{
+    display: none;
+}
+.hcircle.on .hidd_zone{
+    display: block;
+}
+.circle_p{
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    @include dflx_ac_jcent;
+}
+.circle_light{
+    width: auto;
+}
+.prof_c32{
+    width: 32px;
+    height: 32px;
+    position: relative;
+    background-color: #0f173d;
+    border-radius: 100%;
+    overflow: hidden;
+    .line_over{
+        @include overlay_bd2;
+    }
+    img{
+        @include ab_trans_center;
+    }
+}
+.hidd_dark{
+    position: fixed;
+    left: 0px;
+    top:0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 200;
+    display: none;
+}
+.hidd_box{
+    @include box4;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top:43px;
+    z-index: 300;
+}
+.flag_top{
+    width: 100%;
+    padding:5px 0px 4px;
+    cursor: pointer;
+}
+.flag_body{
+    padding: 3px 0px;
+}
+.flags{
+    width: 100%;
+    height: 29px;
+    padding: 0px 12px;
+    cursor: pointer;
+    @include dflx_ac;
+    img{
+        margin: 0px 8px 0px 0px;
+    }
+    .flag_word{
+        line-height: 1;
+        @include fsl12;
+    }
+}
+.prof_wrap{
+    width: 100%;
+}
+.prof_top{
+    padding: 12px;
+    text-align: center;
+    .view{
+        @include box1;
+        padding:10px 6px 7px;
+        font-size: 12px;
+        font-weight: 500;
+    }
+    .account{
+        @include dflx_ac_jbet;
+        padding: 12px 0px;
+        .word{
+            @include fsl12;
+        }
+        img{
+            width: 16px;
+            height: 16px;
+        }
+    }
+    .set{
+        @include fsl12;
+    }
+}
+.prof_end{
+    @include dflx_ac_jcent;
+    padding: 12px;
+    .delete{
+        @include fsl12;
+        font-weight: 500;
+        line-height: 1.1;
+    }
+}
+
+.gr_fixmenu{
+    position: fixed;
+    left: 0px;
+    top:52px;
+    width: 80px;
+    z-index: 100;
+}
+.fixmenu_bar{
+    width: 100%;
+    padding: 10px;
+    @include box2;
+    border-radius: 0px 0px 5px 5px;
+}
+.fixmenu{
+    width: 100%;
+    height: 60px;
+    margin: 0px 0px 10px;
+    position: relative;
+    @include dflx_ac_jcent;
+    @include box1;
+    img{
+        width: 32px;
+        height: 32px;
+    }
+    .icon_fix_on{
+        display: none;
+    }
+    &:last-child{
+        margin: 0px;
+    }
+    &:hover{
+        .icon_fix{
+            display: none;
+        }
+        .icon_fix_on{
+            display: block;
+        }
+    }
+}
+.hidden_menu{
+    position: absolute;
+    //width: 210px;
+    left:72px;
+    top:-25px;
+    background-color: #141e52;
+    border-radius:0px 10px 10px 0px;
+    box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    z-index: 200;
+    display: none;
+    .top{
+        @include dflx_ae;
+        width: 210px;
+        height: 60px;
+        padding: 10px 20px 8px 20px;
+        h1{
+            @include fm_monst;
+            font-size: 18px;
+            font-weight: 500;
+        }
+    }
+    .menus{
+        width: 210px;
+        height: 48px;
+        padding: 2px 0px 0px 20px;
+        a{
+            @include dflx_ac;
+            @include fsl14;
+            height: 100%;
+            &:hover{
+                color: #ff994a;
+            }
+        }
+    }
+}
+
+.container{
+    width: 1280px;
+    margin: 0 auto;
+    padding: 58px 0px 30px;
+}
+.blue_line{
+    width: 100%;
+    padding: 8px;
+    background: #182566;
+    background: linear-gradient(179deg, #182566 20%, #111a48 79%);
+    box-shadow: 3px 3px 7px 0 rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    @include dflx_ac_jbet;
+}
+.nation_bar{
+    width: 19.5%;
+    height: 40px;
+    padding: 4px 12px 0px;
+    cursor: pointer;
+    @include dflx_ac_jbet;
+    @include box1;
+    .call{
+        @include fsm14;
+    }
+    .time{
+        @include fsl12;
+        @include dflx_ae;
+        span{
+            font: inherit;
+            padding: 0px 0px 0px 3px;
+            &.when{
+                line-height: 1.1;
+                padding: 0px 4px 0px 3px;
+                @include fsb20;
+            }
+        }
+    }
+}
+.nation_bar.on{
+    .call,.time{
+        color: #ff994a;
+    }
+}
+.contents{
+    width: 100%;
+    margin: 30px 0px 0px;
+    @include clear;
+}
+.the_aside{
+    width: 290px;
+    overflow: hidden;
+    @include fleft;
+    @include box2;
+}
+.prof_zone{
+    width: 100%;
+    padding: 30px 20px;
+    text-align: center;
+}
+.prof_dl{
+    width: 100%;
+    flex-direction: column;
+    @include dflx_ac;
+    dt{
+        width: 120px;
+        height: 120px;
+        border-radius: 100%;
+        position: relative;
+        @include shadow1;
+    }
+    dd{
+        margin: 15px 0px;
+        @include fm_monst;
+        @include fsm20;
+    }
+}
+.prof_c120{
+    width: 120px;
+    height: 120px;
+    position: relative;
+    background-color: #0f173d;
+    border-radius: 100%;
+    overflow: hidden;
+    .line_over{
+        @include overlay_bd4;
+    }
+    img{
+        @include ab_trans_center;
+    }
+}
+.line1{
+    margin: 0px;
+    position: relative;
+    @include line1;
+}
+.line2{
+    margin: 0px;
+    @include line2;
+}
+.cenbar{
+    @include ab_trans_center;
+    @include dflx_ac_jcent;
+    @include fsl12;
+    min-width: 120px;
+    min-height: 18px;
+    padding: 2px 6px 0px;
+    background-color: #141e52;
+    border-radius: 35px;
+    border: 2px solid #778eff;
+    color: #778eff;
+}
+.roll_zone{
+    padding:25px 20px 22px;
+}
+.roll_contain{
+    width: 100%;
+    position: relative;
+    @include dflx_ac_jbet;
+}
+.rlbt{
+    width: 18px;
+    height: 18px;
+    @include sbt1;
+    img{
+        width: 4px;
+        height: 6px;
+    }
+}
+.roll_cont{
+    @include dflx_ac_jcent;
+    padding: 0px 8px;
+    flex:1;
+    .tell{
+        padding:3px 0px 0px;
+        font-size: 13px;
+        text-decoration: underline;
+        color: #ff994a;
+    }
+}
+.calen_zone{
+    padding: 15px 20px 20px;
+}
+.view_go{
+    @include dflx_ac_jcent;
+    span{
+        @include fsl_vio;
+    }
+    img{
+        width: 6px;
+        height: 10px;
+        margin: 0px 0px 0px 10px;
+    }
+}
+.the_calendar{
+    @include box3;
+    width: 100%;
+    margin: 15px 0px 0px;
+}
+.calendar_top{
+    @include dflx_ac_jbet;
+    padding: 14px 12px 11px;
+    .name{
+        @include fsm16;
+        padding: 0px 0px 0px 5px;
+    }
+    .rlbt{
+        img{
+            width: 7px;
+            height: 1px;
+        }
+    }
+}
+.calendar_box{
+    padding:12px;
+}
+.canlen_month{
+    @include dflx_ac_jbet;
+    padding: 3px 0px 0px;
+    .title{
+        @include fm_monst;
+        @include fsm16;
+        padding: 0px 0px 0px 5px;
+    }
+    .contact{
+        padding: 0px;
+    }
+}
+.calen_table{
+    width: 100%;
+    margin:8px 0px 0px;
+    thead tr th{
+        @include ctd;
+        font-weight: 700;
+    }
+    tbody tr td{
+        @include ctd;
+        cursor: pointer;
+        &.end{
+            opacity: 0.5;
+        }
+        &.saturday,&.sunday{
+            color: #ff994a;
+        }
+    }
+}
+.calen_end{
+    padding: 5px 0px;
+}
+
+.the_main{
+    width: 950px;
+    @include fright;
+}
+.contain{
+    width: 100%;
+    margin: 0px 0px 25px;
+    @include box2;
+}
+.contain_top{
+    @include dflx_ac_jbet;
+    width: 100%;
+    padding: 30px 30px 15px;
+}
+.cttop_left{
+    @include dflx_ac;
+    .top_title{
+        @include fm_monst;
+        font-size: 28px;
+        font-weight: 500;
+    }
+    .go_detail{
+        display: inline-block;
+        padding: 0px 20px;
+        img{
+            width: 25px;
+            height: 25px;
+            opacity: 0.6;
+        }
+    }
+}
+.contain_body{
+    width: 100%;
+    @include pd20;
+}
+.tab_line{
+    @include dflx_ac;
+    padding: 2px 0px 20px;
+    .tab{
+        font-size: 16px;
+        font-weight: 300;
+        padding: 0px 20px;
+        cursor: pointer;
+        &.on,&:hover{
+            color: #ff994a;
+            text-shadow: 0 0 10px rgba(255, 153, 74, 0.4);
+        }
+        &:first-child{
+            padding: 0px 20px 0px 10px;
+        }
+    }
+    .art{
+        font-size: 16px;
+        font-weight: 300;
+        padding: 0px 20px;
+        cursor: pointer;
+        &.on,&:hover{
+            color: #ff994a;
+            text-shadow: 0 0 10px rgba(255, 153, 74, 0.4);
+        }
+        &:first-child{
+            padding: 0px 20px 0px 10px;
+        }
+    }
+}
+.contact_line{
+    width: 100%;
+    @include dflx_ac_jbet;
+}
+.contact{
+    padding: 0px 0px 10px 0px;
+    @include dflx_ac;
+    .rlbt{
+        margin: 0px 0px 0px 10px;
+    }
+}
+.card_line{
+    width: 100%;
+    @include dflx_ac_jbet;
+}
+.the_card{
+    @include box3;
+    width: 23.5%;
+    height: 130px;
+    padding: 14px 13px;
+    border-left: 8px solid #4867FF;
+    position: relative;
+    .delete{
+        position: absolute;
+        right:12px;
+        top:14px;
+        cursor: pointer;
+    }
+    &:first-child{
+        border-left: 8px solid #ff2e4e;
+    }
+}
+.card_dl{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    dt{
+        @include fsm14;
+        margin: 0px 0px 8px;
+        width: calc(100% - 20px);
+    }
+    dd{
+        @include fsl12;
+    }
+}
+.drop_box{
+    width: 100%;
+    height: 130px;
+    padding: 14px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #111a48, #16225c);
+    box-shadow: inset 2px 2px 4px 0 rgba(0, 0, 0, 0.5), 
+    inset -2px -2px 4px rgba(119, 119, 255, 0.5);
+}
+.drop_zone{
+    width: 100%;
+    height: 100%;
+    padding: 3px 4px 0px;
+    border-radius: 5px;
+    border:1px dashed rgba(255, 255, 255, 0.2);
+    flex-direction: column;
+    @include dflx_ac_jcent;
+    img{
+        margin: 0px 0px 12px;
+        width: 34px;
+        height: 34px;
+    }
+    .word{
+        font-size: 16px;
+        font-weight: 500;
+        opacity: 0.4;
+    }
+}
+.the_feed{
+    min-height: 100px;
+    @include box3;
+}
+.feed_top{
+    width: 100%;
+    @include pd20;
+    @include dflx_ac_jbet;
+}
+.prof_c50{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    background-color: #0f173d;
+    border-radius: 100%;
+    overflow: hidden;
+    .line_over{
+        @include overlay_bd2;
+    }
+    img{
+        @include ab_trans_center;
+    }
+}
+.write_zone{
+    flex: 1;
+    height: 50px;
+    background-color: #0f173d;
+    border-radius: 25px;
+    overflow: hidden;
+    padding: 5px 20px 3px;
+    margin: 0px 0px 0px 15px;
+    display: flex;
+    .wirte_put{
+        flex: 1;
+        height: 100%;
+        background: transparent;
+        font-size: 14px;
+        @include fcnom;
+    }
+}
+.feed_conts{
+    width: 100%;
+    padding: 13px 20px 16px;
+}
+.comp_line{
+    width: 100%;
+    @include dflx_ac;
+}
+.the_comp{
+    padding: 0px 40px 0px 0px;
+    cursor: pointer;
+    &:last-child{
+        padding: 0px;
+    }
+    @include dflx_ac;
+    img{
+        width: 24px;
+        height: 24px;
+        margin: 0px 7px 0px 0px;
+    }
+    .word{
+        @include fsr14;
+        line-height: 1.5;
+    }
+}
+
+.gr_message{
+    position: fixed;
+    top: 58px;
+    right:0px;
+    height: calc(100% - 58px);
+    z-index: 100;
+    display: none;
+}
+.message_wrap{
+    @include box2;
+    width: 290px;
+    height: 100%;
+    position: relative;
+    border-radius: 0px;
+}
+.message_top{
+    width: 100%;
+    height: 86px;
+    padding: 12px 20px 15px;
+}
+.mess_top_line{
+    height: 100%;
+    @include dflx_ae_jbet;
+    .top_title{
+        @include fm_monst;
+        font-size: 18px;
+        font-weight:700;
+    }
+}
+.pen{
+    cursor: pointer;
+    img{
+        width: 24px;
+        height: 24px;
+    }
+}
+.message_body{
+    width: 100%;
+    height: calc(100% - 88px);
+    padding: 22px 20px;
+}
+.message_cont{
+    margin: 0px 0px 30px;
+    h3{
+        font-size: 16px;
+        font-weight: 500;
+        margin: 0px 0px 11px;
+    }
+}
+.message_box{
+    @include box3;
+    height: 64px;
+    border-radius: 5px
+}
+.message_dl{
+    @include dflx_ac;
+    width: 100%;
+    height: 100%;
+    padding:10px 12px;
+    dt{
+        width: 40px;
+        height:40px;
+        position: relative;
+        .coming{
+            position: absolute;
+            display: inline-block;
+            right: 1px;
+            bottom: 0px;
+            width: 10px;
+            height: 10px;
+            border: solid 1px #fff;
+            background-color: #54e392;
+            border-radius: 100%;
+            z-index: 20;
+        }
+    }
+    dd{
+        width: calc(100% - 40px);
+        padding:2px 0px 0px 8px;
+    }
+}
+.prof_c40{
+    width: 40px;
+    height: 40px;
+    position: relative;
+    background-color: #0f173d;
+    border-radius: 100%;
+    overflow: hidden;
+    img{
+        @include ab_trans_center;
+    }
+}
+.mess_who{
+    width: 100%;
+    @include dflx_ac_jbet;
+    .who{
+        @include fsm14;
+        @include txt_ellip;
+        flex:1;
+        padding: 0px 5px 0px 0px;
+    }
+    .time{
+        font-size: 12px;
+        opacity: 0.3;
+    }
+}
+.mess_tip
+{
+    width: 100%;
+    padding: 2px 0px 0px;
+    @include dflx_ac_jbet;
+    .word{
+        @include fsl13;
+        @include txt_ellip;
+        flex:1;
+        padding: 0px 5px 0px 0px;
+    }
+    .bagde{
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background-color: #ff4f19;
+        border-radius: 100%;
+        text-align: center;
+        font-size: 12px;
+        padding: 3px 0px 0px;
+    }
+    &.bord{
+        justify-content: flex-start;
+    }
+    .bord_tip{
+        @include fsl12;
+        display: inline-block;
+        padding: 4px 9px 2px;
+        margin: 0px 1px;
+        background:rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+    }
+}
+
