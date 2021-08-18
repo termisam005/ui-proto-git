@@ -138,6 +138,11 @@ nav{
         @include dflx_ac_jcent;
     }
 }
+.hroom{
+    margin: 0px 0px 0px 20px;
+    position: relative;
+    @include dflx_ac_jcent;
+}
 .hidd_zone{
     display: none;
 }
@@ -152,6 +157,9 @@ nav{
 }
 .circle_light{
     width: auto;
+    height: 32px;
+    cursor: pointer;
+    @include dflx_ac_jcent;
 }
 .prof_c32{
     width: 32px;

@@ -1,4 +1,4 @@
-//import styles from "../styles/App.module.css";
+import { Link } from "react-router-dom";
 
 export default function Header() {
 
@@ -6,25 +6,48 @@ export default function Header() {
         alert('검색 목록을 작성하세요.');
     };
 
+    const onCircle = () => {
+        let currenMenu;
+        let cicZone = document.querySelectorAll('.hcircle');
+        let theDark = document.querySelector('.hidd_dark');
+
+        function circleHandler() {
+            if (currenMenu) {
+                currenMenu.classList.remove('on');
+            }
+            this.classList.add('on');
+            currenMenu = this;
+            theDark.style.display = "block";
+
+            theDark.addEventListener('click', function () {
+                currenMenu.classList.remove('on');
+                this.style.display = "none";
+            });
+        }
+        for (var i = 0; i < cicZone.length; i++) {
+            cicZone[i].addEventListener('click', circleHandler);
+        }
+    }
+
     return (
         <header>
             <div className="header_line">
                 <section className="header_left">
                     <p className="btn_menu"></p>
                     <h1 className="hd_logo">
-                        <a href="./index.html" title="Sparwk">
+                        <Link to="/main" title="Sparwk">
                             <img src="../resources/images/logo.png" alt="Sparwk" />
-                        </a>
+                        </Link>
                     </h1>
                     <nav>
-                        <p className="nav_menu on">
-                            <a>For you</a>
+                        <p className="nav_menu">
+                            <Link to="/foryou">For you</Link>
                         </p>
                         <p className="nav_menu">
-                            <a>Collabo</a>
+                            <Link to="/collabo">Collabo</Link>
                         </p>
                         <p className="nav_menu">
-                            <a>Pitching</a>
+                            <Link to="/pitching">Pitching</Link>
                         </p>
                     </nav>
                 </section>
@@ -34,19 +57,20 @@ export default function Header() {
                         <input type="text" className="hd_input" placeholder="Search" />
                     </article>
                 </section>
+
                 <section className="header_right">
                     <article className="hd_icline">
-                        <div className="hcircle">
+                        <div className="hidd_dark"></div>
+                        <div onClick={onCircle} className="hcircle">
                             <p className="circle_p">
                                 <img src="../resources/images/clock.png" alt="time" />
                             </p>
                         </div>
-                        <div className="hcircle">
+                        <div onClick={onCircle} className="hcircle">
                             <p className="circle_p">
                                 <img src="../resources/images/nation_usa.png" alt="usa" />
                             </p>
                             <section className="hidd_zone">
-                                <div className="hidd_dark"></div>
                                 <article className="hidd_box">
                                     <div className="flag_top">
                                         <p className="flags">
@@ -88,24 +112,23 @@ export default function Header() {
                                 </article>
                             </section>
                         </div>
-                        <div className="hcircle">
+                        <div onClick={onCircle} className="hcircle">
                             <p className="circle_p btn_message">
                                 <span className="cout">2</span>
                                 <img src="../resources/images/talk.png" alt="message" />
                             </p>
                         </div>
-                        <div className="hcircle">
+                        <div onClick={onCircle} className="hcircle">
                             <p className="circle_p">
                                 <img src="../resources/images/bell.png" alt="alarm" />
                             </p>
                         </div>
-                        <div className="hcircle">
+                        <div onClick={onCircle} className="hcircle">
                             <p className="circle_p prof_c32">
                                 <span className="line_over"></span>
                                 <img src="../resources/images/thumb_ex1.jpg" alt="profile photo" />
                             </p>
                             <section className="hidd_zone">
-                                <div className="hidd_dark"></div>
                                 <article className="hidd_box">
                                     <section className="prof_wrap">
                                         <div className="prof_top">
@@ -128,8 +151,8 @@ export default function Header() {
                                 </article>
                             </section>
                         </div>
-                        <div className="hcircle">
-                            <p className="circle_p circle_light">
+                        <div className="hroom">
+                            <p className="circle_light">
                                 <img src="../resources/images/img_btn_dark.png" alt="light button" />
                             </p>
                         </div>
@@ -139,6 +162,7 @@ export default function Header() {
 
             <section className="gr_fixmenu">
                 <article className="fixmenu_bar">
+                    {/* 페이지이동 */}
                     <div className="fixmenu">
                         <img className="icon_fix" src="../resources/images/sv_fix_note.svg" alt="icon note" />
                         <img className="icon_fix_on" src="../resources/images/sv_fix_note_on.svg" alt="icon note" />
@@ -148,18 +172,23 @@ export default function Header() {
                             </div>
                             <p className="line1"></p>
                             <div className="menus">
-                                <a>Login</a>
+                                <Link to="/login">Login</Link>
                             </div>
                             <p className="line1"></p>
                             <div className="menus">
-                                <a>Signin</a>
+                                <Link to="/signin">Signin</Link>
                             </div>
                             <p className="line1"></p>
                             <div className="menus">
-                                <a>Music</a>
+                                <Link to="/find_id">FindId</Link>
+                            </div>
+                            <p className="line1"></p>
+                            <div className="menus">
+                                <Link to="/find_pw">FindPw</Link>
                             </div>
                         </section>
                     </div>
+                    {/* 페이지이동 End */}
                     <div className="fixmenu">
                         <img className="icon_fix" src="../resources/images/sv_fix_note.svg" alt="icon note" />
                         <img className="icon_fix_on" src="../resources/images/sv_fix_note_on.svg" alt="icon note" />

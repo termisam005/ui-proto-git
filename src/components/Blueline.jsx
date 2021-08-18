@@ -1,4 +1,21 @@
+import React from "react"
+
 export default function Blueline() {
+
+    const addOn = () => {
+        let currentBar;
+        let nationBar = document.querySelectorAll('.nation_bar');
+        function nationHandler() {
+            if (currentBar) {
+                currentBar.classList.remove('on');
+            }
+            this.classList.add('on');
+            currentBar = this;
+        }
+        for (var i = 0; i < nationBar.length; i++) {
+            nationBar[i].addEventListener('click', nationHandler);
+        }
+    }
 
     const nationBars = [
         { city: 'Chicago', mm: 'PM', time: 10, minutes: 24, hour: '-9h' },
@@ -10,7 +27,7 @@ export default function Blueline() {
 
     const renderBars = nationBars.map(nationbar => {
         return (
-            <article className="nation_bar" key={nationbar.city}>
+            <article onClick={addOn} className="nation_bar" key={nationbar.city}>
                 <p className="call">{nationbar.city}</p>
                 <div className="time">
                     <span>{nationbar.mm}</span>
