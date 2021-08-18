@@ -1,5 +1,5 @@
+import React from "react"
 import styles from "../styles/App.module.scss";
-import React from "react";
 import classNames from "classnames/bind";
 
 const cx = classNames.bind(styles);
@@ -28,7 +28,5 @@ class ButtonComponent extends React.Component {
         }, 1000);
     };
 }
-
-
 
 export default ButtonComponent;

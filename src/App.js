@@ -1,35 +1,26 @@
 import React from "react";
-
-import "./App.scss";
-//import styles from "./styles/App.module.css";
-import Header from "./components/Header";
-import Blueline from "./components/Blueline";
-import Aside from "./components/Aside";
-import Feed from "./components/Feed";
-import Project from "./components/Project";
-import Task from "./components/Task";
-import ButtonComponent from "./components/ButtonComponent";
+import { BrowserRouter, BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Login from "./pages/Login";
+import FindId from "./pages/FindId";
+import FindPw from "./pages/FindPw";
+import Signin from "./pages/Signin";
+import Main from "./pages/Main";
 
 function App() {
   return (
-    <div className="wrap">
-      <Header />
-      <div className="container">
-        <Blueline />
-        <div className="contents">
-          <Aside />
-          <main className="the_main">
-            <Task />
-            <Project />
-            <Feed />
-            <div className="cont50">
-              <ButtonComponent>Cancel</ButtonComponent>
-              <ButtonComponent>Confirm</ButtonComponent>
-            </div>
-          </main>
-        </div>
-      </div>
-    </div>
+    <BrowserRouter>
+      <Switch>
+        {/*로그인*/}
+        <Route path={['/', '/login']} exact component={Login} />
+        {/*아이디/비번 찾기*/}
+        <Route path="/find_id" exact component={FindId} />
+        <Route path="/find_pw" exact component={FindPw} />
+        {/*회원가입*/}
+        <Route path="/Signin" exact component={Signin} />
+        {/*메인화면*/}
+        <Route path="/main" exact component={Main} />
+      </Switch>
+    </BrowserRouter>
   );
 }
 

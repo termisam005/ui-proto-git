@@ -144,6 +144,27 @@ export default function Header() {
                         <img className="icon_fix_on" src="../resources/images/sv_fix_note_on.svg" alt="icon note" />
                         <section className="hidden_menu">
                             <div className="top">
+                                <h1>Pages</h1>
+                            </div>
+                            <p className="line1"></p>
+                            <div className="menus">
+                                <a>Login</a>
+                            </div>
+                            <p className="line1"></p>
+                            <div className="menus">
+                                <a>Signin</a>
+                            </div>
+                            <p className="line1"></p>
+                            <div className="menus">
+                                <a>Music</a>
+                            </div>
+                        </section>
+                    </div>
+                    <div className="fixmenu">
+                        <img className="icon_fix" src="../resources/images/sv_fix_note.svg" alt="icon note" />
+                        <img className="icon_fix_on" src="../resources/images/sv_fix_note_on.svg" alt="icon note" />
+                        <section className="hidden_menu">
+                            <div className="top">
                                 <h1>Project</h1>
                             </div>
                             <p className="line1"></p>
