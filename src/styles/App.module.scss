@@ -1,3 +1,6 @@
+@import '_reset.scss';
+@import '_mixin.scss';
+
 .button{
   width: 232px;
   height: 40px;
@@ -13,4 +16,28 @@
 }
 .button_on{
   background: #ff994a;
+}
+
+.hcircle{
+  margin: 0px 0px 0px 20px;
+  position: relative;
+  @include dflx_ac_jcent;
+  .cout{
+      position: absolute;
+      right: -6px;
+      top:-2px;
+      width: 20px;
+      height: 20px;
+      border-radius: 100%;
+      background-color: #ff4f19;
+      color: #fff;
+      font-size: 12px;
+      @include dflx_ac_jcent;
+  }
+}
+.hcircle .hidd_zone{
+  display: none;
+}
+.hcircle_on .hidd_zone{
+  display: block;
 }
