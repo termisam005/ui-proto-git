@@ -63,26 +63,26 @@ $(function () {
 // });
 
 /*hcircle*/
-// let currenMenu;
-// let cicZone = document.querySelectorAll('.hcircle');
-// let theDark = document.querySelector('.hidd_dark');
+let currenMenu;
+let cicZone = document.querySelectorAll('.hcircle');
+let theDark = document.querySelector('.hidd_dark');
 
-// function circleHandler() {
-//     if (currenMenu) {
-//         currenMenu.classList.remove('on');
-//     }
-//     this.classList.add('on');
-//     currenMenu = this;
-//     theDark.style.display = "block";
+function circleHandler() {
+    if (currenMenu) {
+        currenMenu.classList.remove('on');
+    }
+    this.classList.add('on');
+    currenMenu = this;
+    theDark.style.display = "block";
 
-//     theDark.addEventListener('click', function () {
-//         currenMenu.classList.remove('on');
-//         this.style.display = "none";
-//     });
-// }
-// for (var i = 0; i < cicZone.length; i++) {
-//     cicZone[i].addEventListener('click', circleHandler);
-// }
+    theDark.addEventListener('click', function () {
+        currenMenu.classList.remove('on');
+        this.style.display = "none";
+    });
+}
+for (var i = 0; i < cicZone.length; i++) {
+    cicZone[i].addEventListener('click', circleHandler);
+}
 
 /*natoin_bar*/
 // let currentBar;
