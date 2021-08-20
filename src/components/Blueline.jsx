@@ -1,50 +1,47 @@
-import React from "react"
+import React, { Component } from "react";
+import $ from "jquery";
 
-export default function Blueline() {
+class Blueline extends Component {
 
-    const addOn = () => {
-        let currentBar;
-        let nationBar = document.querySelectorAll('.nation_bar');
-        function nationHandler() {
-            if (currentBar) {
-                currentBar.classList.remove('on');
-            }
-            this.classList.add('on');
-            currentBar = this;
-        }
-        for (var i = 0; i < nationBar.length; i++) {
-            nationBar[i].addEventListener('click', nationHandler);
-        }
+    componentDidMount() {
+        $(function () {
+            $(".nation_bar").click(function () {
+                $(".nation_bar").removeClass("on");
+                $(this).addClass("on");
+            });
+        });
     }
 
-    const nationBars = [
-        { city: 'Chicago', mm: 'PM', time: 10, minutes: 24, hour: '-9h' },
-        { city: 'Tokyo', mm: 'PM', time: 5, minutes: 22, hour: '-5' },
-        { city: 'London', mm: 'PM', time: 10, minutes: 24, hour: '-9' },
-        { city: 'Seoul', mm: 'PM', time: 10, minutes: 24, hour: '0' },
-        { city: 'New york', mm: 'PM', time: 9, minutes: 22, hour: '+1' },
-    ];
+    render() {
 
-    const renderBars = nationBars.map(nationbar => {
+        const nationBars = [
+            { city: 'Chicago', mm: 'PM', time: 10, minutes: 24, hour: '-9h' },
+            { city: 'Tokyo', mm: 'PM', time: 5, minutes: 22, hour: '-5' },
+            { city: 'London', mm: 'PM', time: 10, minutes: 24, hour: '-9' },
+            { city: 'Seoul', mm: 'PM', time: 10, minutes: 24, hour: '0' },
+            { city: 'New york', mm: 'PM', time: 9, minutes: 22, hour: '+1' },
+        ];
+
+        const renderBars = nationBars.map(nationbar => {
+            return (
+                <article className="nation_bar" key={nationbar.city}>
+                    <p className="call">{nationbar.city}</p>
+                    <div className="time">
+                        <span>{nationbar.mm}</span>
+                        <span className="when">
+                            {nationbar.time}:{nationbar.minutes}
+                        </span>
+                        <span>{nationbar.hour}</span>
+                    </div>
+                </article>
+            );
+        });
+
         return (
-            <article onClick={addOn} className="nation_bar" key={nationbar.city}>
-                <p className="call">{nationbar.city}</p>
-                <div className="time">
-                    <span>{nationbar.mm}</span>
-                    <span className="when">
-                        {nationbar.time}:{nationbar.minutes}
-                    </span>
-                    <span>{nationbar.hour}</span>
-                </div>
-            </article>
-        );
-    });
+            <section className="blue_line">
+                {renderBars}
 
-    return (
-        <section className="blue_line">
-            {renderBars}
-
-            {/* <article className="nation_bar">
+                {/* <article className="nation_bar">
                 <p className="call">{nationBars[0].city}</p>
                 <div className="time">
                     <span>{nationBars[0].mm}</span>
@@ -94,6 +91,9 @@ export default function Blueline() {
                     <span>{nationBars[4].hour}</span>
                 </div>
             </article> */}
-        </section>
-    );
+            </section>
+        );
+    }
 }
+
+export default Blueline;

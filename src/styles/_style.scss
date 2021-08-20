@@ -154,9 +154,6 @@ header{
 .hcircle .hidd_zone{
     display: none;
 }
-.hcircle_on .hidd_zone{
-    display: block;
-}
 .circle_p{
     width: 32px;
     height: 32px;
@@ -191,11 +188,11 @@ header{
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 200;
-    display: none;
+    //display: none;
 }
-.hcircle_on .hidd_dark{
-    display: block;
-}
+// .hcircle.on .hidd_dark{
+//     display: block;
+// }
 .hidd_box{
     @include box4;
     position: absolute;
@@ -337,6 +334,10 @@ header{
             }
         }
     }
+}
+
+.fixmenu.on .hidden_menu{
+    display: block;
 }
 
 .container{
@@ -760,19 +761,18 @@ header{
 .gr_message{
     position: fixed;
     top: 58px;
-    right:-290px;
-    width: 290px;
+    right:0px;
+    //width: 290px;
     height: calc(100% - 58px);
     z-index: 100;
-    transition:0.3s all;
-    //display: none;
+    display: none;
 }
-.gr_message.see{
-    right:0px;
-}
+// .gr_message.see{
+//     right:0px;
+// }
 .message_wrap{
     @include box2;
-    width: 100%;
+    width: 290px;
     height: 100%;
     position: relative;
     border-radius: 0px;

@@ -23,22 +23,22 @@ $(function () {
 });
 
 /*gr_fixmenu*/
-$(function () {
-    $(".btn_menu").click(function () {
-        $(".fixmenu_bar").slideToggle(200);
-    });
-});
+// $(function () {
+//     $(".btn_menu").click(function () {
+//         $(".fixmenu_bar").slideToggle(200);
+//     });
+// });
 
 /*fixmenu*/
-$(function () {
-    $(".fixmenu").hover(
-        function () {
-            $(this).children(".hidden_menu").stop().animate({
-                width: "toggle"
-            }, 200);
-        }
-    );
-});
+// $(function () {
+//     $(".fixmenu").hover(
+//         function () {
+//             $(this).children(".hidden_menu").stop().animate({
+//                 width: "toggle"
+//             }, 200);
+//         }
+//     );
+// });
 
 /*nav_menu*/
 $(function () {
