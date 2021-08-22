@@ -6,11 +6,14 @@ import $ from "jquery";
 
 class Header extends Component {
 
+    state = {
+        isToggleOn: false,
+    }
+
     componentDidMount() {
         $(function () {
             $(".circle_p").click(function () {
                 $(this).parents(".hcircle").toggleClass("on");
-                //$(".hidd_dark").css("display", "block");
             });
             $(".hidd_dark").click(function () {
                 $(this).parents(".hcircle").removeClass("on");
@@ -19,28 +22,10 @@ class Header extends Component {
                 $(this).parents(".hcircle").removeClass("on");
             });
         });
-
-        $(function () {
-            $(".btn_message").click(function () {
-                $(".gr_message").stop().animate({
-                    width: "toggle"
-                }, 150);
-            });
-        })
     }
 
     render() {
-
-        // const onCircle = () => {}
-
-        // const onMessage = () => {
-        //     let btnMess = document.querySelector('.btn_message');
-        //     let grMess = document.querySelector('.gr_message');
-
-        //     btnMess.addEventListener('click', function () {
-        //         grMess.classList.toggle('see');
-        //     });
-        // }
+        const isOn = this.state.isToggleOn;
 
         return (
             <header>
@@ -125,7 +110,7 @@ class Header extends Component {
                                 </section>
                             </div>
                             <div className="hroom">
-                                <p className="circle_p btn_message">
+                                <p className="circle_p btn_message" onClick={() => this.setState({ isToggleOn: !isOn })}>
                                     <span className="hc_cout">2</span>
                                     <img src="../resources/images/talk.png" alt="message" />
                                 </p>
@@ -174,7 +159,10 @@ class Header extends Component {
                 </div>
 
                 <Fixmenu />
-                <Grmessage />
+
+                <section className={isOn ? "gr_message see" : "gr_message"}>
+                    <Grmessage />
+                </section>
             </header>
         );
     }

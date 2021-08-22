@@ -1,6 +1,6 @@
 import React from "react";
 import "../App.scss";
-import Header from "../components/Header";
+import Header from "../components/header/Header";
 import Blueline from "../components/Blueline";
 import Aside from "../components/Aside";
 import Feed from "../components/Feed";

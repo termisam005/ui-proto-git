@@ -1,32 +1,19 @@
 import React from "react"
-import styles from "../styles/App.module.scss";
-import classNames from "classnames/bind";
+//import styles from "../styles/App.module.scss";
 
-const cx = classNames.bind(styles);
 class ButtonComponent extends React.Component {
     state = {
-        button_on: false,
+        buttonOn: false,
     };
 
     render() {
-        const { button_on } = this.state;
+        const isOn = this.state.buttonOn;
 
         return (
-            <button onClick={this.startLoading} className={cx("button", { button_on })}
+            <button onClick={() => this.setState({ buttonOn: !isOn })} className={isOn ? "button on" : "button"}
                 {...this.props} />
         )
     }
-
-    startLoading = () => {
-        this.setState({
-            button_on: true,
-        });
-        setTimeout(() => {
-            this.setState({
-                button_on: false,
-            });
-        }, 1000);
-    };
 }
 
 export default ButtonComponent;
