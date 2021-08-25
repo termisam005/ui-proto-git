@@ -7,12 +7,12 @@
 // });
 
 /*tab*/
-$(function () {
-    $(".tab").click(function () {
-        $(".tab").removeClass("on");
-        $(this).addClass("on");
-    });
-});
+// $(function () {
+//     $(".tab").click(function () {
+//         $(".tab").removeClass("on");
+//         $(this).addClass("on");
+//     });
+// });
 
 /*art*/
 $(function () {

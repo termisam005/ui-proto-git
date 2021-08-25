@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import "./App.scss";
 import Login from "./pages/Login";
 import FindId from "./pages/FindId";
 import FindPw from "./pages/FindPw";

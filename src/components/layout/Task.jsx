@@ -1,4 +1,6 @@
+import $ from "jquery";
 export default function Task() {
+
     return (
         <article className="contain">
             <section className="contain_top">
@@ -15,11 +17,13 @@ export default function Task() {
             <p className="line1"></p>
             <section className="contain_body">
                 <article className="contact_line">
+
                     <div className="tab_line">
                         <p className="tab on">All</p>
                         <p className="tab">Rush</p>
                         <p className="tab">Urgent</p>
                     </div>
+
                     <div className="contact">
                         <span className="rlbt">
                             <img src="../resources/images/sv_arr_left_mini.svg" alt="arrow" />

@@ -1,34 +1,31 @@
-import React from "react";
 import { useState } from "react";
 import Header from "../components/header/Header";
+import PopComponent from "../components/common/PopComponent";
 
-export default function Foryou() {
-    const [showPopup, setShowPopup] = useState(false);
+export default function Collabo() {
+    const [popUps, setpopUps] = useState(false);
 
-    const togglePopup = (event) => {
-        setShowPopup(event.target.value)
-    };
+    const openPop = () => {
+        setpopUps(true);
+    }
+    const closePop = () => {
+        setpopUps(false);
+    }
 
     return (
         <div className="wrap">
             <Header />
             <div className="container">
                 <div className="contents">
-                    <h1>Foryou</h1>
+                    <h1>Collabo</h1>
 
-                    <button type="button" onClick={togglePopup} value='false'>팝업오픈</button>
+                    <button onClick={openPop}>팝업오픈</button>
 
-                    {showPopup ? (
-                        <section className={"pop_contents"}>
-                            <div onClick={togglePopup} className={"pop_bg"}></div>
-                            <div className={"pop_body"}>
-                                <button onClick={togglePopup} className={"close_pop"} type="button">Close</button>
-                            </div>
-                        </section>
-                    ) : null}
+                    <PopComponent open={popUps} close={closePop} pop_txt={"팝업테스트"} />
                 </div>
             </div>
         </div>
     )
 }
+
 

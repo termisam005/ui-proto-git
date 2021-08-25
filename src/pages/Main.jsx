@@ -1,12 +1,12 @@
 import React from "react";
-import "../App.scss";
+//import "../App.scss";
 import Header from "../components/header/Header";
-import Blueline from "../components/Blueline";
-import Aside from "../components/Aside";
-import Feed from "../components/Feed";
-import Project from "../components/Project";
-import Task from "../components/Task";
-import ButtonComponent from "../components/ButtonComponent";
+import Blueline from "../components/layout/Blueline";
+import Aside from "../components/layout/Aside";
+import Feed from "../components/layout/Feed";
+import Project from "../components/layout/Project";
+import Task from "../components/layout/Task";
+import ButtonComponent from "../components/common/ButtonComponent";
 
 export default function Main() {
     return (

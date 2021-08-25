@@ -6,10 +6,13 @@
 @mixin dpflx{display: flex !important;}
 @mixin fleft{float:left !important;}
 @mixin fright{float:right !important;}
-@mixin w100{width: 100% !important;}
 @mixin bold {font-weight: bold !important;}
 @mixin fcnom {color: #fff !important;}
 @mixin clear {&::after{content:"";display:block;clear:both;}}
+
+//width
+@mixin w-100{width: 100% !important;}
+@mixin w350{width: 350px !important;}
 
 //padding
 @mixin pd10{padding: 10px;}
