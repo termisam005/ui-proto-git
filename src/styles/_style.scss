@@ -1,5 +1,6 @@
 @import '_reset.scss';
 @import '_mixin.scss';
+@import '_kit.scss';
 
 body{
     background-color: $bbg0;
@@ -1099,33 +1100,4 @@ header{
         font-weight: 300;
         opacity: 0.6;
     }
-}
-
-
-/*Tabs*/
-.tabs{
-    margin: 50px 0px 0px;
-    width: 33%;
-    height: 36px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #06004f;
-    border: 1px solid #0f1948;
-    font-size: 15px;
-    cursor: pointer;
-}
-.active_tabs{
-    background-color:#fff;
-    color: #06004f;
-}
-.cont{
-    padding: 20px 0px;
-    display: none;
-}
-.active_cont{
-    display: block;
-}
-.cont h2{
-    padding: 0px 0px 5px 0px;
 }
