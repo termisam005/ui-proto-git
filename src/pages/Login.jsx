@@ -1,5 +1,6 @@
 import InputComponent from "../components/common/InputComponent";
 import { Link } from "react-router-dom";
+import AddOn from "../components/common/AddOn";
 
 export default function Login() {
     return (
@@ -45,7 +46,12 @@ export default function Login() {
                                         <button type="button" className="button on">
                                             <Link to="/main">Login</Link>
                                         </button>
-                                        <button type="button" className="button society">
+
+                                        <AddOn>Login in with Google</AddOn>
+                                        <AddOn>Login in with Facebook</AddOn>
+                                        <AddOn>Sign in with Apple</AddOn>
+
+                                        <button type="button" className="button society on">
                                             Login in with Google
                                         </button>
                                         <button type="button" className="button society">
@@ -54,6 +60,7 @@ export default function Login() {
                                         <button type="button" className="button society">
                                             Sign in with Apple
                                         </button>
+
                                     </div>
                                     <div className="line_cont">
                                         <span className="word">Don’t have an account?</span>

@@ -4,7 +4,7 @@ import Modal from "../components/assets/Modal";
 
 function Pitching() {
     // useState를 사용하여 open상태를 변경한다. (open일때 true로 만들어 열리는 방식)
-    const [modalOpen, setModalOpen] = useState(false);
+    const [modalOpen, setModalOpen] = useState(true);
 
     const openModal = () => {
         setModalOpen(true);
